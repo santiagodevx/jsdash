@@ -1,7 +1,3 @@
-# Tauri + React + Typescript
+# JSDash
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+A lightweight, cross-platform JavaScript playground for writing and executing JavaScript with support for multiple Node.js versions. Built with Tauri, React, TypeScript, and Rust.
