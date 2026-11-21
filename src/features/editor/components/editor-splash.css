@@ -1,0 +1,73 @@
+.code-editor {
+  position: relative;
+  height: 100%;
+}
+
+.editor-splash {
+  --splash-bg: var(--editor-splash-bg, #09090f);
+  --splash-glow: var(--editor-splash-glow, rgb(124 92 255 / 0.16));
+  --splash-show: 1.4s;
+  --splash-fade: 0.6s;
+
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 50% 50%, var(--splash-glow), transparent 70%),
+    var(--splash-bg);
+  animation: editor-splash-out var(--splash-fade) ease-in var(--splash-show)
+    forwards;
+}
+
+.editor-splash::before {
+  content: "";
+  width: 112px;
+  height: 112px;
+  -webkit-mask: url("/vestai_logo_loading.svg") center / contain no-repeat;
+  mask: url("/vestai_logo_loading.svg") center / contain no-repeat;
+  background: linear-gradient(
+      110deg,
+      rgb(255 255 255 / 0.35) 30%,
+      #fff 50%,
+      rgb(255 255 255 / 0.35) 70%
+    )
+    100% 0 / 250% 100%;
+  animation:
+    editor-splash-logo-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+    editor-splash-shimmer 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes editor-splash-logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes editor-splash-shimmer {
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* visibility: hidden al final lo saca del árbol de accesibilidad */
+@keyframes editor-splash-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editor-splash::before {
+    animation: none;
+    background: rgb(255 255 255 / 0.85);
+  }
+}
