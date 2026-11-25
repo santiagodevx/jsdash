@@ -6,14 +6,14 @@ import { EDITOR_THEME } from "../config/editor-theme";
 import "./editor-splash.css";
 
 function CodeEditor() {
-  const { code, setCode } = useEditor();
+  const { code, setCode, language } = useEditor();
   const { handleEditorMount } = useCodeEditor();
 
   return (
-    <div className="code-editor">
+    <div className="code-editor h-full w-full relative min-h-0">
       <Editor
         height="100%"
-        language="javascript"
+        language={language}
         theme={EDITOR_THEME}
         value={code}
         onChange={(value) => setCode(value ?? "")}

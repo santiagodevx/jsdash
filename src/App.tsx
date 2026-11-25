@@ -2,13 +2,16 @@ import CodeEditor from "./features/editor/components/CodeEditor";
 import { EditorProvider } from "./features/editor/context/EditorProvider";
 
 import "./App.css";
+import Layout from "./components/layout/Layout";
+import OutputPanel from "./features/runtime/components/OutputPanel";
 
 export default function App() {
   return (
     <EditorProvider>
-      <div style={{ height: "100vh" }}>
+      <Layout>
         <CodeEditor></CodeEditor>
-      </div>
+        <OutputPanel></OutputPanel>
+      </Layout>
     </EditorProvider>
   );
 }
