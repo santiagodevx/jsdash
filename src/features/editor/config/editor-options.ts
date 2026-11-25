@@ -33,7 +33,13 @@ export const EDITOR_OPTIONS: EditorProps["options"] = {
 
   // Scrollbar
   scrollbar: {
-    verticalScrollbarSize: 8,
-    horizontalScrollbarSize: 8,
+    vertical: "hidden",
+    horizontal: "hidden",
+    verticalScrollbarSize: 0,
+    horizontalScrollbarSize: 0,
+    alwaysConsumeMouseWheel: false,
   },
+  overviewRulerLanes: 0,
+  overviewRulerBorder: false,
+  hideCursorInOverviewRuler: true,
 };
